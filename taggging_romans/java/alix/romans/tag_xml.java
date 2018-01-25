@@ -34,10 +34,10 @@ public class tag_xml {
 			System.out.println("Usage : tag_xml.java ./path/to/your/source_directory ./path/to/your/target_directory");
 		}
 
-//		File input_dir = new File(args[0]);
-		File input_dir = new File("/root/git/tagging/taggging_romans/source_texts");
-//		File output_dir = new File(args[1]);
-		File output_dir = new File("/root/git/tagging/taggging_romans/target_texts");
+		File input_dir = new File(args[0]);
+//		File input_dir = new File("/root/git/tagging/taggging_romans/source_texts");
+		File output_dir = new File(args[1]);
+//		File output_dir = new File("/root/git/tagging/taggging_romans/target_texts");
 		File[] files_list = input_dir.listFiles(new FilenameFilter() {
 			public boolean accept(File dir, String name) {
 				return name.toLowerCase().endsWith(".xml");
