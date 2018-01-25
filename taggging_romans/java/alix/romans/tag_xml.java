@@ -28,17 +28,17 @@ public class tag_xml {
 
 	public static void main(String[] args) throws IOException, ParserConfigurationException, SAXException, TransformerException {
 		
-		System.out.println("This software tags TEI/XML files and exports tagged texts to a target director");
+		System.out.println("This software tags TEI/XML files and exports tagged texts to a target directory");
 		
-		if (args.length == 0) {
-			
-			System.out.println("Usage : tag_xml.java ./path/to/your/source_directory ./path/to/your/target_directory");
-			System.exit(1);
-			
-		}
+//		if (args.length == 0) {
+//			
+//			System.out.println("Usage : tag_xml.java ./path/to/your/source_directory ./path/to/your/target_directory");
+//			System.exit(1);
+//			
+//		}
 
 		File input_dir = new File(args[0]);
-//		File input_dir = new File("/root/git/tagging/taggging_romans/source_texts");
+//		File input_dir = new File("/home/odysseus/chapitres/git_repo/romans");
 		File output_dir = new File(args[1]);
 //		File output_dir = new File("/root/git/tagging/taggging_romans/target_texts");
 		File[] files_list = input_dir.listFiles(new FilenameFilter() {
@@ -51,7 +51,7 @@ public class tag_xml {
 
 		for (File file : files_list){
 
-			String text=new String(Files.readAllBytes(file.toPath()), StandardCharsets.UTF_8);
+			String text=new String(Files.readAllBytes(file.toPath()), StandardCharsets.UTF_8).replaceAll("’", "'");
 			Tokenizer tokenizer=new Tokenizer(text);
 			Occ occ = new Occ();
 
@@ -105,14 +105,15 @@ public class tag_xml {
 						if (matcher.find() || occurrence.graph().toString().contains("…")) {
 							
 							StringBuilder replacement = new StringBuilder();
-							replacement.append(occurrence.graph().toString());
 							replacement.append(" <word form=\"");
 							replacement.append(occurrence.graph().toString());
-							replacement.append(" lemma=\"");
+							replacement.append("\" lemma=\"");
 							replacement.append(occurrence.lem().toString());
-							replacement.append(" postag=\"");
+							replacement.append("\" postag=\"");
 							replacement.append(occurrence.tag().toString());
-							replacement.append("\"> ");
+							replacement.append("\">");
+							replacement.append(occurrence.graph().toString());
+							replacement.append("</word>");
 							Element child_word=new Element("word");
 							child_word.text(replacement.toString());
 							p.appendChild(child_word);
@@ -130,7 +131,7 @@ public class tag_xml {
 					if (p.ownText().endsWith(".")) {
 						
 						Element punct=new Element("word");
-						punct.text(". <word form=\".\" lemma=\".\" postag=\"PUN\">");
+						punct.text("<word form=\".\" lemma=\".\" postag=\"PUN\">.</word>");
 						p.appendChild(punct);
 						
 					}
@@ -142,11 +143,14 @@ public class tag_xml {
 				
 			}
 			
+//			System.out.println(doc.toString());
 			File output = new File(output_dir+"/"+file.getName());
 			doc.outputSettings().indentAmount(0).prettyPrint(false);
 			@SuppressWarnings("resource")
 			PrintWriter writer = new PrintWriter(output,"utf-8");
-			writer.write(StringEscapeUtils.unescapeXml(doc.html())) ;
+			writer.write(StringEscapeUtils.unescapeXml(doc.toString())) ;
+			writer.flush();
+			writer.close();
 
 		}
 		
