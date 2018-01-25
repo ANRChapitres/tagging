@@ -12,5 +12,6 @@
 	<classpathentry kind="lib" path="lib/saxon9.jar"/>
 	<classpathentry kind="lib" path="lib/sqlite-jdbc-3.21.0.jar"/>
 	<classpathentry kind="lib" path="lib/univocity-parsers-2.0.2.jar"/>
+	<classpathentry kind="lib" path="lib/commons-lang3-3.7.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
