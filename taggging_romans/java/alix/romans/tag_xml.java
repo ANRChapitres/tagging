@@ -31,7 +31,10 @@ public class tag_xml {
 		System.out.println("This software tags TEI/XML files and exports tagged texts to a target director");
 		
 		if (args.length == 0) {
+			
 			System.out.println("Usage : tag_xml.java ./path/to/your/source_directory ./path/to/your/target_directory");
+			System.exit(1);
+			
 		}
 
 		File input_dir = new File(args[0]);
