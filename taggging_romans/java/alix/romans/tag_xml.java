@@ -4,18 +4,13 @@ import alix.fr.Tokenizer;
 import alix.util.Occ;
 
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.FilenameFilter;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.io.UnsupportedEncodingException;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-
-import javax.xml.parsers.ParserConfigurationException;
-import javax.xml.transform.TransformerException;
 
 import org.apache.commons.lang3.StringEscapeUtils;
 import org.jsoup.Jsoup;
@@ -23,13 +18,12 @@ import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.parser.Parser;
 import org.jsoup.select.Elements;
-import org.xml.sax.SAXException;
 
 
 @SuppressWarnings("deprecation")
 public class tag_xml {
 
-	public static void main(String[] args) throws IOException, ParserConfigurationException, SAXException, TransformerException {
+	public static void main(String[] args) throws IOException {
 
 		System.out.println("This software tags TEI/XML files and exports tagged texts to a target directory");
 
@@ -39,17 +33,6 @@ public class tag_xml {
 			System.exit(1);
 
 		}
-
-		new Tag(args);
-
-	}
-
-}
-
-class Tag {
-
-	@SuppressWarnings({ "deprecation" })
-	public Tag(String args[]) throws FileNotFoundException, UnsupportedEncodingException{
 
 		File input_dir = new File(args[0]);
 		//		File input_dir = new File("/home/odysseus/Bureau/ANR/code/corpus/romans");
