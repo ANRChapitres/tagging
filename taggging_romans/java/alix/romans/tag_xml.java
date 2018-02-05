@@ -16,6 +16,7 @@ import org.apache.commons.lang3.StringEscapeUtils;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
+import org.jsoup.nodes.Entities;
 import org.jsoup.parser.Parser;
 import org.jsoup.select.Elements;
 
@@ -135,8 +136,9 @@ public class tag_xml {
 
 			File output = new File(output_dir + "/"+file.getName());
 			doc.outputSettings().indentAmount(0).prettyPrint(false);
+			doc.outputSettings().syntax(Document.OutputSettings.Syntax.xml).escapeMode(Entities.EscapeMode.xhtml);
 			PrintWriter writer = new PrintWriter(output,"utf-8");
-			writer.write(StringEscapeUtils.unescapeXml(doc.toString())) ;
+			writer.write(doc.toString()) ;
 			writer.flush();
 			writer.close();
 
