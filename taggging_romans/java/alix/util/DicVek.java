@@ -464,9 +464,10 @@ public class DicVek
   {
     try {
       writer.write("{\n");
-      boolean first1 = true;
+      @SuppressWarnings("unused")
+	boolean first1 = true;
       int count1 = 1;
-      for (Entry entry : dic.byCount()) {
+      for (@SuppressWarnings("unused") Entry entry : dic.byCount()) {
         // TODO, write vector
         if (--count1 == 0)
           break;
@@ -659,7 +660,8 @@ public class DicVek
    */
   public static void main(String[] args) throws IOException
   {
-    String usage = "Usage: java -cp alix.jar site.oeuvres.muthovek.Dicovek texts/*\n"
+    @SuppressWarnings("unused")
+	String usage = "Usage: java -cp alix.jar site.oeuvres.muthovek.Dicovek texts/*\n"
         + "   texts maybe in txt or xml.\n";
     BufferedReader keyboard = new BufferedReader(new InputStreamReader(System.in, StandardCharsets.UTF_8));
     if (args.length == 0) {
@@ -689,7 +691,8 @@ public class DicVek
 
     // Boucle de recherche
     List<SimRow> table;
-    DecimalFormat df = new DecimalFormat("0.0000");
+    @SuppressWarnings("unused")
+	DecimalFormat df = new DecimalFormat("0.0000");
     while (true) {
       System.out.println("");
       System.out.print("Mot : ");

@@ -15,7 +15,8 @@ public class IntPair implements Comparable<IntPair>
   /** Internal data */
   protected int y;
   /** Precalculate hash */
-  private int hash;
+  @SuppressWarnings("unused")
+private int hash;
 
   public IntPair() {
   }

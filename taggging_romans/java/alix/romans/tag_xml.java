@@ -19,6 +19,12 @@ import org.jsoup.nodes.Element;
 import org.jsoup.parser.Parser;
 import org.jsoup.select.Elements;
 
+/**
+ * Tag input xml using alix, gives tagged xml as output
+ * 
+ * @author odysseuspolymetis
+ *
+ */
 
 @SuppressWarnings("deprecation")
 public class tag_xml {

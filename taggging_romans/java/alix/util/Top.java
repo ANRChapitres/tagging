@@ -250,7 +250,8 @@ public class Top<E> implements Iterable<Top.Entry<E>>
     }
     System.out.println((System.nanoTime() - start) / 1000000000.0 + " s");
 
-    String[] list = top.toArray();
+    @SuppressWarnings("unused")
+	String[] list = top.toArray();
     for (Entry<String> entry : top) {
       System.out.println(entry);
     }

@@ -433,7 +433,8 @@ public class Lexik
    * @throws ParseException
    * @throws IOException
    */
-  private static void comp() throws IOException, ParseException
+  @SuppressWarnings("unused")
+private static void comp() throws IOException, ParseException
   {
     BufferedReader read = new BufferedReader(
         new InputStreamReader(Tokenizer.class.getResourceAsStream("dic/commune.csv"), StandardCharsets.UTF_8));

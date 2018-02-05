@@ -57,7 +57,8 @@ public class MoreLikeThisQuery extends Query
     this.fieldName = fieldName;
   }
 
-  @Override
+  @SuppressWarnings("deprecation")
+@Override
   public Query rewrite(IndexReader reader) throws IOException
   {
     if (getBoost() != 1f) {

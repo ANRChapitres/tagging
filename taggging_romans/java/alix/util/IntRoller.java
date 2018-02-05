@@ -15,7 +15,8 @@ public class IntRoller extends Roller
   /** Data of the sliding window */
   private int[] data;
   /** Cached HashCode */
-  private int hash;
+  @SuppressWarnings("unused")
+private int hash;
 
   /**
    * Constructor, init data

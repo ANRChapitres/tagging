@@ -38,8 +38,10 @@ public class Tokenizer
   /** Is it xml ? */
   boolean xml;
   /** If we want a substring for last token found */
+  @SuppressWarnings("unused")
   private int beginIndex;
   /** If we want a substring for last token found */
+  @SuppressWarnings("unused")
   private int endIndex;
   /** For the simple tokenizer */
   boolean sent;
@@ -307,7 +309,8 @@ public class Tokenizer
   private boolean locsearch(Stem stem)
   {
     short tag = 0;
-    Stem child;
+    @SuppressWarnings("unused")
+	Stem child;
     String orth = null;
     Occ scout = occhere; // an occurrence launch to search for compound
     Occ end = null;
@@ -376,7 +379,8 @@ public class Tokenizer
    */
   public boolean token(Occ occ)
   {
-    Term copy = new Term();
+    @SuppressWarnings("unused")
+	Term copy = new Term();
     occ.tag(Tag.UNKNOWN);
     pointer = next(occ, pointer); // parse the text at pointer position
     if (pointer < 0)
@@ -588,7 +592,8 @@ public class Tokenizer
     pos = fw(pos); // go to start of first token
     if (pos < 0)
       return pos; // end of text, finish
-    boolean supsc = false; // xml tag inside word like <sup>, <sc>…
+    @SuppressWarnings("unused")
+	boolean supsc = false; // xml tag inside word like <sup>, <sc>…
     char c = text.charAt(pos); // should be start of a token
 
     if (evstruct != EVNUL) {
@@ -906,7 +911,8 @@ public class Tokenizer
   /**
    * For testing Bugs — François I er
    */
-  public static void main(String[] args)
+  @SuppressWarnings("unused")
+public static void main(String[] args)
   {
     // maybe useful, the path of the project, but could be not consistent with
     // Path context =

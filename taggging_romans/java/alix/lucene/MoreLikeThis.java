@@ -153,6 +153,7 @@ import java.util.Set;
  * - optimise: when no termvector support available - used maxNumTermsParsed to limit amount of tokenization
  * </pre>
  */
+@SuppressWarnings("deprecation")
 public final class MoreLikeThis
 {
 
@@ -892,7 +893,8 @@ public final class MoreLikeThis
    *          List of terms and their frequencies for a doc/field
    * @throws IOException
    */
-  private void print(Terms vector) throws IOException
+  @SuppressWarnings("unused")
+private void print(Terms vector) throws IOException
   {
     if (vector == null)
       return;
@@ -906,7 +908,8 @@ public final class MoreLikeThis
       spare.copyUTF8Bytes(text);
       map.put(spare.toString(), termsEnum.totalTermFreq());
     }
-    Map.Entry<String, Long>[] a = map.entrySet().toArray(new Map.Entry[0]);
+    @SuppressWarnings("unchecked")
+	Map.Entry<String, Long>[] a = map.entrySet().toArray(new Map.Entry[0]);
     Arrays.sort(a, new Comparator<Map.Entry<String, Long>>() {
       @Override
       public int compare(Map.Entry<String, Long> o1, Map.Entry<String, Long> o2)
@@ -1092,9 +1095,12 @@ public final class MoreLikeThis
     String word;
     String topField;
     float score;
-    float idf;
-    int docFreq;
-    int tf;
+    @SuppressWarnings("unused")
+	float idf;
+    @SuppressWarnings("unused")
+	int docFreq;
+    @SuppressWarnings("unused")
+	int tf;
 
     ScoreTerm(String word, String topField, float score, float idf, int docFreq, int tf) {
       this.word = word;

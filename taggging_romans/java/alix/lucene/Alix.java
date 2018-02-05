@@ -241,7 +241,7 @@ public class Alix
       Class<?>[] params = new Class[1];
       params[0] = Version.class;
       Constructor<?> constructor = cl.getDeclaredConstructor(params);
-      analyzer = (Analyzer) constructor.newInstance(null);
+      analyzer = (Analyzer) constructor.newInstance((Object[])null);
     }
     catch (Exception e) {
     }

@@ -63,7 +63,8 @@ public class StemTrie
     String line;
     BufferedReader buf = new BufferedReader(new InputStreamReader(stream, StandardCharsets.UTF_8));
     buf.readLine(); // first line is labels and should give number of cells to find
-    int i = 0;
+    @SuppressWarnings("unused")
+	int i = 0;
     String[] cells;
     while ((line = buf.readLine()) != null) {
       line = line.trim();

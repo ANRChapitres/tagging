@@ -287,7 +287,8 @@ public class DicPhrase
 
     IntRoller wordflow = new IntRoller(-15, 0);
     int code;
-    int exit = 1000;
+    @SuppressWarnings("unused")
+	int exit = 1000;
     StringBuffer label = new StringBuffer();
     for (File src : new File(dir).listFiles()) {
       if (src.isDirectory())

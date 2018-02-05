@@ -37,8 +37,10 @@ public class Char
   private static final short PUNCTUATION_OR_SPACE = SPACE | PUNCTUATION;
   private static final short LOWERCASE = 0x0010;
   private static final short UPPERCASE = 0x0020;
-  private static final short VOWEL = 0x0040;
-  private static final short CONSONNANT = 0x0080;
+  @SuppressWarnings("unused")
+private static final short VOWEL = 0x0040;
+  @SuppressWarnings("unused")
+private static final short CONSONNANT = 0x0080;
   private static final short DIGIT = 0x0100;
   private static final short PUNsent = 0x0200;
   private static final short PUNcl = 0x0400;

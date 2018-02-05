@@ -34,9 +34,9 @@ public class Lexer
   private int maxright = 0;
   /** Cell separator */
   private String sep = ";";
-
+  
   /** Change separator */
-  public void Lexer(final String sep)
+  public void lexer(final String sep)
   {
     this.sep = sep;
   }
@@ -176,7 +176,8 @@ public class Lexer
    * 
    * @param occ
    */
-  public boolean apply(Occ occ)
+  @SuppressWarnings("null")
+public boolean apply(Occ occ)
   {
     int[] rules = null;
     int[] rules1 = byform.get(occ.orth());

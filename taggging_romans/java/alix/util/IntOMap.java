@@ -194,7 +194,8 @@ public class IntOMap<E>
    * 
    * @return
    */
-  public E remove()
+  @SuppressWarnings("unchecked")
+public E remove()
   {
     // if ( pointer == -1 ) return NO_VALUE;
     // if ( pointer > keys.length ) return NO_VALUE;

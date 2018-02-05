@@ -18,6 +18,7 @@ import java.nio.file.attribute.BasicFileAttributes;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
+
 import alix.fr.Lexik;
 import alix.fr.Tag;
 import alix.fr.Tokenizer;
@@ -461,9 +462,10 @@ public class MiMat
   {
     try {
       writer.write("{\n");
-      boolean first1 = true;
+      @SuppressWarnings("unused")
+	boolean first1 = true;
       int count1 = 1;
-      for (Entry entry : dic.byCount()) {
+      for (@SuppressWarnings("unused") Entry entry : dic.byCount()) {
         // TODO, write vector
         if (--count1 == 0)
           break;
@@ -761,7 +763,8 @@ public class MiMat
     System.out.println(dic.size());
     System.out.println(coocs.size());
 
-    MiVek[] veks = new MiVek[dic.size()];
+    @SuppressWarnings("unused")
+	MiVek[] veks = new MiVek[dic.size()];
 
     /*
      * Iterator<Map.Entry<IntPair,Cell>> iter = coocs.entrySet().iterator(); while (

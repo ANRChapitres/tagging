@@ -12,7 +12,8 @@ import alix.util.Occ;
 public class TestStop extends Test
 {
   /** Max size of gap */
-  private int gap;
+  @SuppressWarnings("unused")
+private int gap;
 
   @Override
   public boolean test(Occ occ)
