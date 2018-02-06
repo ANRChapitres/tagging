@@ -78,6 +78,7 @@ public class tag_xml {
 
 				if (p.text().length()>0){
 					
+					String own_text=p.ownText();
 					p.text("");
 					Occ occurrence = new Occ();
 					String text_to_tok = p_text.replaceAll("[<>]","");
@@ -107,7 +108,7 @@ public class tag_xml {
 
 					}
 
-					if (p.ownText().endsWith(".")) {
+					if (own_text.endsWith(".")) {
 
 						p.appendElement("word").attr("form",".")
 							.attr("lemma",".")
