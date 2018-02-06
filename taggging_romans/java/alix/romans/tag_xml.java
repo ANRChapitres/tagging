@@ -111,7 +111,7 @@ public class tag_xml {
 
 						p.appendElement("word").attr("form",".")
 							.attr("lemma",".")
-							.attr("postag","PUN");
+							.attr("postag","PUNsent");
 						/* The tokenizer wouldn't take into account certain full stops, adding them manually */
 
 					}
