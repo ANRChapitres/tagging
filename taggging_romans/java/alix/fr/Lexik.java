@@ -250,7 +250,8 @@ public class Lexik
    *          orthographic form
    * @return
    */
-  public static boolean isStop(final Term orth)
+  @SuppressWarnings("unlikely-arg-type")
+public static boolean isStop(final Term orth)
   {
     if (orth.isEmpty())
       return true;
@@ -276,7 +277,8 @@ public class Lexik
    *          form with initial cap
    * @return
    */
-  public static boolean isName(final Term orth)
+  @SuppressWarnings("unlikely-arg-type")
+public static boolean isName(final Term orth)
   {
     return NAME.containsKey(orth);
   }
@@ -292,7 +294,8 @@ public class Lexik
   /**
    * Test orthographic form
    */
-  public static boolean isWord(Term term)
+  @SuppressWarnings("unlikely-arg-type")
+public static boolean isWord(Term term)
   {
     return WORD.containsKey(term);
   }
@@ -303,7 +306,8 @@ public class Lexik
    * @param tok
    * @return true if entry fond
    */
-  public static boolean word(Occ occ)
+  @SuppressWarnings("unlikely-arg-type")
+public static boolean word(Occ occ)
   {
     if (ORTH.containsKey(occ.graph()))
       occ.orth(ORTH.get(occ.graph()));
@@ -321,7 +325,8 @@ public class Lexik
    * @param tok
    * @return true if entry fond
    */
-  public static boolean name(Occ occ)
+  @SuppressWarnings("unlikely-arg-type")
+public static boolean name(Occ occ)
   {
     // if ( occ.orth().isEmpty() ) occ.orth( occ.graph() ); // ?
     NameEntry entry = Lexik.NAME.get(occ.orth());
@@ -342,7 +347,8 @@ public class Lexik
    * @param term
    * @return
    */
-  public static boolean orth(Term term)
+  @SuppressWarnings("unlikely-arg-type")
+public static boolean orth(Term term)
   {
     if (!ORTH.containsKey(term))
       return false;
@@ -356,7 +362,8 @@ public class Lexik
    * @param term
    * @return
    */
-  public static String brevidot(Term graph)
+  @SuppressWarnings("unlikely-arg-type")
+public static String brevidot(Term graph)
   {
     return Lexik.BREVIDOT.get(graph);
   }

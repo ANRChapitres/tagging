@@ -240,7 +240,8 @@ public final class Tag
 
   public static short code(final Term label)
   {
-    Short ret = CODE.get(label);
+    @SuppressWarnings("unlikely-arg-type")
+	Short ret = CODE.get(label);
     if (ret == null)
       return UNKNOWN;
     return ret;

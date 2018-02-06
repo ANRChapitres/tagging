@@ -337,7 +337,8 @@ public class StemTrie
       return children.get(form);
     }
 
-    public Stem get(Term form)
+    @SuppressWarnings("unlikely-arg-type")
+	public Stem get(Term form)
     {
       // String map = mapper.get( form );
       // if ( map != null ) form.replace( map );

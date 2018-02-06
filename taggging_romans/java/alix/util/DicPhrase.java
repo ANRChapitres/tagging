@@ -122,7 +122,8 @@ public class DicPhrase
 
   public int inc(final IntRoller key)
   {
-    Ref ref = tupleDic.get(key);
+    @SuppressWarnings("unlikely-arg-type")
+	Ref ref = tupleDic.get(key);
     occs++;
     if (ref == null) {
       ref = new Ref(1);
@@ -148,7 +149,8 @@ public class DicPhrase
 
   public void label(final IntRoller key, final String label)
   {
-    Ref ref = tupleDic.get(key);
+    @SuppressWarnings("unlikely-arg-type")
+	Ref ref = tupleDic.get(key);
     if (ref == null)
       return; // create it ?
     ref.label = label;
@@ -164,7 +166,8 @@ public class DicPhrase
 
   public boolean contains(final IntRoller win)
   {
-    Ref ref = tupleDic.get(win);
+    @SuppressWarnings("unlikely-arg-type")
+	Ref ref = tupleDic.get(win);
     if (ref == null)
       return false;
     return true;

@@ -239,7 +239,8 @@ private int hash;
    * 
    * @param args
    */
-  public static void main(String args[])
+  @SuppressWarnings("unlikely-arg-type")
+public static void main(String args[])
   {
     IntRoller win = new IntRoller(-2, 3);
     for (int i = 1; i < 20; i++) {

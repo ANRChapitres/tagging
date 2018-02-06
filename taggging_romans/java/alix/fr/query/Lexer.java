@@ -180,7 +180,8 @@ public class Lexer
 public boolean apply(Occ occ)
   {
     int[] rules = null;
-    int[] rules1 = byform.get(occ.orth());
+    @SuppressWarnings("unlikely-arg-type")
+	int[] rules1 = byform.get(occ.orth());
     int[] rules2 = bytag.get(occ.tag().prefix());
     if (rules1 == null && rules2 == null)
       return false;

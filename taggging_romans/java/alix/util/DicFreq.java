@@ -195,7 +195,8 @@ public class DicFreq
    */
   public int code(Term term)
   {
-    Entry entry = byTerm.get(term);
+    @SuppressWarnings("unlikely-arg-type")
+	Entry entry = byTerm.get(term);
     if (entry == null)
       return -1;
     return entry.code;
@@ -223,7 +224,8 @@ public class DicFreq
    */
   public int tag(Term term)
   {
-    Entry line = byTerm.get(term);
+    @SuppressWarnings("unlikely-arg-type")
+	Entry line = byTerm.get(term);
     if (line == null)
       return 0;
     return line.tag;
@@ -280,7 +282,8 @@ public class DicFreq
    */
   public int count(Term term)
   {
-    Entry line = byTerm.get(term);
+    @SuppressWarnings("unlikely-arg-type")
+	Entry line = byTerm.get(term);
     if (line == null)
       return -1;
     return line.count.get();
@@ -386,7 +389,8 @@ public class DicFreq
    */
   public int inc(final Term term, final int tag)
   {
-    Entry entry = byTerm.get(term);
+    @SuppressWarnings("unlikely-arg-type")
+	Entry entry = byTerm.get(term);
     if (entry == null) entry = entry(term.toString(), tag);
     entry.count.incrementAndGet();
     occs.incrementAndGet();
@@ -507,7 +511,8 @@ public class DicFreq
    */
   public int add(final Term term, final int tag, final int delta1, final int delta2)
   {
-    Entry entry = byTerm.get(term);
+    @SuppressWarnings("unlikely-arg-type")
+	Entry entry = byTerm.get(term);
     if (entry == null) {
       entry = entry(term.toString(), tag);
     }
@@ -530,7 +535,8 @@ public class DicFreq
    */
   public int put(final Term term, final int tag, final int count, final int count2)
   {
-    Entry entry = byTerm.get(term);
+    @SuppressWarnings("unlikely-arg-type")
+	Entry entry = byTerm.get(term);
     if (entry == null) {
       entry = entry(term.toString(), tag);
     }

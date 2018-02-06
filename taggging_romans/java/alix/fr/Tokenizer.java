@@ -452,7 +452,8 @@ public class Tokenizer
       if (Lexik.word(occ))
         return true;
       // Evolution ? > évolution ; TODO FREDERIC > Frédéric
-      String lc = Lexik.CAPS.get(occ.graph());
+      @SuppressWarnings("unlikely-arg-type")
+	String lc = Lexik.CAPS.get(occ.graph());
       if (lc != null) {
         occ.orth(lc.toLowerCase());
         Lexik.word(occ);
@@ -506,7 +507,8 @@ public class Tokenizer
    * @param pos
    * @return the position of next token char
    */
-  private int fw(int pos)
+  @SuppressWarnings("unlikely-arg-type")
+private int fw(int pos)
   {
     evstruct = EVNUL;
     if (pos < 0)
@@ -582,7 +584,8 @@ public class Tokenizer
    *          Pointer in the text from where to start
    * @return
    */
-  private int next(Occ occ, int pos)
+  @SuppressWarnings("unlikely-arg-type")
+private int next(Occ occ, int pos)
   {
     String s;
     occ.clear(); // we should clear here, isn‘t it ?

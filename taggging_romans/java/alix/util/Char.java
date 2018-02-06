@@ -279,7 +279,8 @@ private static final short CONSONNANT = 0x0080;
 
   public static char htmlent(Term ent)
   {
-    Character c = HTMLENT.get(ent);
+    @SuppressWarnings("unlikely-arg-type")
+	Character c = HTMLENT.get(ent);
     if (c == null)
       return '�';
     return c;
