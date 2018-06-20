@@ -37,14 +37,14 @@ public class tag_xml {
 		if (args.length == 0) {
 
 			System.out.println("Usage : tag_xml.java ./path/to/your/source_directory ./path/to/your/target_directory");
-			System.exit(1);
+			//System.exit(1);
 
 		}
 
 		File input_dir = new File(args[0]);
-//				File input_dir = new File("/home/odysseus/Bureau/chapitres/git_repo/romans");
+				//File input_dir = new File("/home/odysseus/Bureau/chapitres/git_repo/romans");
 		File output_dir = new File(args[1]);
-//				File output_dir = new File("/home/odysseus/Bureau/chapitres/git_repo/romans_tagging");
+				//File output_dir = new File("/home/odysseus/Bureau/chapitres/git_repo/test");
 		File[] files_list = input_dir.listFiles(new FilenameFilter() {
 			public boolean accept(File dir, String name) {
 				return name.toLowerCase().endsWith(".xml");
@@ -70,7 +70,7 @@ public class tag_xml {
 			}
 
 			Document doc = Jsoup.parse(text,"", Parser.xmlParser());
-			Elements ps = doc.select("p");
+			Elements ps = doc.select("p,quote");
 
 			for (Element p:ps){
 
